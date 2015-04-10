@@ -306,9 +306,6 @@ sub print_grid {
     print " More\n";
 
     printf "%4d: Total commits\n", $stat{total_commits};
-    print_message( $stat{max_streak_weekdays}, $stat{max_weekdays_start}, $stat{max_weekdays_end}, "Longest streak excluding weekends" );
-    print_message( $stat{max_streak},          $stat{max_start},          $stat{max_end},          "Longest streak including weekends" );
-    print_message( $stat{cur_streak_weekdays}, $stat{cur_weekdays_start}, time,              "Current streak" );
 }
 
 
