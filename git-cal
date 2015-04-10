@@ -128,11 +128,9 @@ sub init_cal_stuff {
     $pos_month{ $month_pos{$_} } = $months[$_] foreach keys %month_pos;
 
     die "period can only be between -11 to 0 and 1 to 12" if ( defined $period && ( $period < -11 || $period > 12 ) );
-    if ( !defined $period ) {
-        $start_block = $first_block;
-        $end_block   = $last_block;
-    }
-    elsif ( $period > 0 ) {
+    if ( !defined $period ) { $period = -6; }
+
+    if ( $period > 0 ) {
         $start_block = $month_pos{ $period - 1 };
         $end_block   = $month_pos{ $period % 12 };
         $end_block   = $last_block if $start_block > $end_block;
